@@ -3,5 +3,9 @@ FROM mysql:5.7
 ADD conf/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
 
 RUN mkdir -p /var/log/mysql-binlog && chown -R mysql:mysql /var/log/mysql-binlog
+RUN mkdir -p /var/log/docker_log/mysql/ && chown -R mysql:mysql /var/log/docker_log/mysql/
 
 ENV MYSQL_ROOT_PASSWORD=123456
+
+EXPOSE 3306
+EXPOSE 3308
