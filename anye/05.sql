@@ -23,16 +23,19 @@ CREATE TABLE anye_5_1
 	id  int primary key auto_increment,
 	username varchar(20) not null default '',
 	age int not null default '0',
-	index idx_username(username)
+	index idx_username(username,age)
 ) engine=InnoDB DEFAULT CHARSET=utf8mb4;
 
+truncate anye_5_1;
 -- 插入数据
 insert into anye_5_1 (username,age) values
 ('李四', 20),
 ('王五', 10),
-('张六', 30),
+('王六', 30),
 ('张三', 10),
 ('张三', 10),
 ('张三', 20);
 
-explain select * from anye_5_1 where username like '张%' limit 2;
+explain select * from anye_5_1 where username like '%六' limit 3;
+
+explain select * from anye_5_1 where age=30 limit 3;

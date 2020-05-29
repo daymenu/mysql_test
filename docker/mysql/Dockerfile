@@ -1,6 +1,7 @@
 FROM mysql:5.7
 
 ADD conf/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
+ADD conf/.my.cnf /root/.my.cnf
 
 RUN mkdir -p /var/log/mysql-binlog && chown -R mysql:mysql /var/log/mysql-binlog
 RUN mkdir -p /var/log/docker_log/mysql/ && chown -R mysql:mysql /var/log/docker_log/mysql/
