@@ -38,4 +38,26 @@ insert into anye_5_1 (username,age) values
 
 explain select * from anye_5_1 where username like '%六' limit 3;
 
-explain select * from anye_5_1 where age=30 limit 3;
+CREATE TABLE IF NOT EXISTS `anye_5_2`
+(
+	`a` int NOT NULL,
+	`b` INT NOT NULL,
+	`c` int NOT NULL,
+	`d` int NOT NULL,
+	PRIMARY KEY(`a`,`b`),
+	key `c` (`c`),
+	key `ca` (`c`,`a`),
+	key `cb`(`c`,`b`)
+) engine=InnoDB DEFAULT CHARSET=utf8mb4;
+
+insert into `anye_5_2`
+values 
+(1,2,3,d),
+(1,3,2,d),
+(1,4,3,d),
+(2,1,3,d),
+(2,2,2,d),
+(2,3,4,d);
+
+
+explain select id from anye_5_1 where age=10;
