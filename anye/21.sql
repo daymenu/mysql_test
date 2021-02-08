@@ -1,6 +1,6 @@
 -- docker exec -it mysql_mysql_service_1 /bin/bash
 -- (5,10),(10,15],(15,20],(20,25)
-REATE TABLE `anye_21` (
+CREATE TABLE `anye_21` (
   `id` int(11) NOT NULL,
   `c` int(11) DEFAULT NULL,
   `d` int(11) DEFAULT NULL,
